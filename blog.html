@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="blog.css">
+    <title>ARCHITECTS | Arsitektur yang melampaui imajinasi</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="./IMG/logo1.0.png" alt=""></div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="blog.html" class="active">BLOG</a></li>
+                <li><a href="lokasi.html">LOKASI</a></li>
+                <li><a href="pesanan.html">PESANAN</a></li>
+                <div class="login">
+                    <a href="https://wa.me/6289478398673" class="btn">Hubungi Kami</a>
+                </div>
+            </ul>
+
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="blog" id="blog">
+        <div class="card">
+            <div class="card-in">
+                <h3>Tentang <span>Kami</span></h3>
+                <p>Selamat datang di Architects, perusahaan arsitektur yang didedikasikan untuk menghadirkan 
+                    desain rumah yang estetis, fungsional, dan ramah lingkungan. Sejak berdiri pada tahun 2005, 
+                    kami telah menjadi mitra terpercaya dalam menciptakan hunian yang tidak hanya memenuhi kebutuhan, 
+                    tetapi juga mencerminkan karakter unik setiap pemiliknya.
+                    Kami percaya bahwa rumah adalah pusat kehidupan, tempat di mana cerita dimulai dan kenangan tercipta. 
+                    Oleh karena itu, kami menghadirkan solusi desain yang mengutamakan kenyamanan, keindahan, dan keberlanjutan.
+                </p>
+                <p>Hingga saat ini, Architects telah menyelesaikan ratusan proyek di seluruh Indonesia, 
+                    mulai dari rumah pribadi hingga perumahan modern. Dengan tim profesional yang berpengalaman dan inovatif, 
+                    kami siap membantu Anda mewujudkan rumah impian yang tidak hanya menjadi tempat tinggal, tetapi juga pusat 
+                    kehidupan yang penuh makna.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="kategori">
+            <h1 class="heading">Jenis Layanan</h1>
+            <a href="#" data-category="semua">Semua</a>
+            <a href="#" data-category="arsitektur">Arsitektur</a>
+            <a href="#" data-category="konstruksi">Konstruksi</a>
+        </div>
+
+        <div class="blog-grid" id="blogGrid"></div>
+    </section>
+
+    <div class="satu">
+        <p>Anda membutuhkan bantuan?</p>
+        <a href="https://wa.me/6289478398673" class="contact-btn">Hubungi Kami</a>
+    </div>
+
+    <div class="dua">
+        <div class="dua-main">
+            <div class="btn-main">
+                <img src="./IMG/logo1.0.png" alt="">
+                <p>Kami berkomitmen menciptakan hasil desain yang menarik dan inovatif</p>
+            </div>
+
+            <div class="btn-main">
+                <h3>Quick <span>Links</span></h3>
+                <a href="index.html">HOME</a>
+                <a href="blog.html" class="active">BLOG</a>
+                <a href="lokasi.html">LOKASI</a>
+                <a href="pesanan.html">PESANAN</a>
+            </div>
+
+            <div class="btn-main">
+                <h3>Follow <span>Us</span></h3>
+                <a href="">Instagram</a>
+                <a href="">Twitter</a>
+                <a href="">Facebook</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide');
+        });
+        function showMap() {
+            document.getElementById('mapModal').style.display = 'block';
+        }
+    
+        function closeMap() {
+            document.getElementById('mapModal').style.display = 'none';
+        }
+        const blogGrid = document.getElementById('blogGrid');
+        const kategoriLinks = document.querySelectorAll('.kategori a');
+        let projekData = []; // Variabel untuk menyimpan data dari API
+    
+        // Tampilkan skeleton loader
+        const showSkeleton = () => {
+            blogGrid.innerHTML = `
+                <div class="blog-post skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="blog-content">
+                        <h2 class="skeleton-title"></h2>
+                        <div class="skeleton-meta"></div>
+                        <table class="tanah">
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                        </table>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+                <div class="blog-post skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="blog-content">
+                        <h2 class="skeleton-title"></h2>
+                        <div class="skeleton-meta"></div>
+                        <table class="tanah">
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                        </table>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+                <div class="blog-post skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="blog-content">
+                        <h2 class="skeleton-title"></h2>
+                        <div class="skeleton-meta"></div>
+                        <table class="tanah">
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                        </table>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+                <div class="blog-post skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="blog-content">
+                        <h2 class="skeleton-title"></h2>
+                        <div class="skeleton-meta"></div>
+                        <table class="tanah">
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                        </table>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+                <div class="blog-post skeleton">
+                    <div class="skeleton-img"></div>
+                    <div class="blog-content">
+                        <h2 class="skeleton-title"></h2>
+                        <div class="skeleton-meta"></div>
+                        <table class="tanah">
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                            <tr><td class="skeleton-line"></td></tr>
+                        </table>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+            `;
+        };
+    
+        // Fetch data from API
+        const fetchProjek = async () => {
+            try {
+                showSkeleton(); // Tampilkan skeleton saat memulai permintaan
+                const response = await fetch('https://sol-stru-server.vercel.app/api/projek');
+                const result = await response.json();
+                if (result.success) {
+                    projekData = result.data; // Simpan data ke variabel projekData
+                    renderBlogPosts(projekData); // Render semua data pertama kali
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+    
+        // Render blog posts
+        const renderBlogPosts = (data, category = 'semua') => {
+            blogGrid.innerHTML = ''; // Bersihkan konten lama
+            data
+                .filter(projek => category === 'semua' || projek.jenis_layanan === category)
+                .forEach(projek => {
+                    const blogPost = `
+                        <div class="blog-post">
+                            <img src="${projek.foto_pj}" alt="${projek.nama_pj}">
+                            <div class="blog-content">
+                                <h2>${projek.nama_pj}</h2>
+                                <div class="blog-meta">
+                                    <span>${new Date(projek.created_at).toLocaleDateString()}</span> | <span>${projek.alamat_pj}</span>
+                                </div>
+                                <table class="tanah">
+                                    <tr>
+                                        <td>Gaya Bangunan</td>
+                                        <td style="text-align: right;">${projek.gaya_bangunan}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luas Tanah</td>
+                                        <td style="text-align: right;">${projek.luas_tanah} m²</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luas Bangunan</td>
+                                        <td style="text-align: right;">${projek.luas_bangunana} m²</td>
+                                    </tr>
+                                </table>
+                                <p>${projek.deskripsi}</p>
+                                <a href="detail.html?pjid=${projek.pjid}" class="detail-link">Lihat Detail</a>
+                            </div>
+                        </div>`;
+                    blogGrid.innerHTML += blogPost;
+                });
+        };
+
+    
+        // Handle category filter
+        kategoriLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = link.getAttribute('data-category');
+                kategoriLinks.forEach(link => link.classList.remove('active-category'));
+                link.classList.add('active-category');
+                renderBlogPosts(projekData, category); // Gunakan projekData untuk filtering
+            });
+        });
+    
+        // Initial fetch and render
+        fetchProjek();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>ARCHITECTS | Arsitektur yang melampaui imajinasi</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="./IMG/logo1.0.png" alt=""></div>
+
+        <nav>
+            <ul>
+                <li><a href="" style="--i:1;" class="active">HOME</a></li>
+                <li><a href="blog.html" style="--i:2;">BLOG</a></li>
+                <li><a href="lokasi.html" style="--i:3;">LOKASI</a></li>
+                <li><a href="pesanan.html" style="--i:4;">PESANAN</a></li>
+                <div class="login">
+                    <a href="https://wa.me/6289478398673" class="btn">Hubungi Kami</a>
+                </div>
+            </ul>
+
+            <div class="menu-toggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <h1>ARCHITECTS</h1>
+        <p>Arsitektur yang melampaui imajinasi</p>
+    </section>
+
+    <section class="visi">
+        <h2 class="heading">Visi <span>Misi</span></h2>
+
+        <div class="add">
+            <div class="card">
+                <h3>Visi</h3>
+                <p>Menjadi pemimpin global dalam desain arsitektur inovatif dan berkelanjutan, menciptakan ruang yang menginspirasi dan meningkatkan kualitas hidup.</p>
+            </div>
+
+            <div class="card">
+                <h3 style="color: #003366;">Misi</h3>
+                <ol class="list">
+                    <li>Merancang bangunan dan ruang yang berwawasan lingkungan dan hemat energi.
+                    </li>
+                    <li>Mengintegrasikan teknologi terkini dalam setiap proyek untuk efisiensi dan efektivitas.</li>
+                    <li>Memberikan layanan arsitektur berkualitas tinggi yang melampaui harapan klien.</li>
+                    <li>Memberikan layanan arsitektur berkualitas tinggi yang melampaui harapan klien.</li>
+                    <li>Berkontribusi positif bagi masyarakat melalui desain yang bertanggung jawab secara sosial.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="note">
+            <h3>Sejarah <span>perusahaan</span></h3>
+            <p>Architects didirikan pada tahun 2005 dengan tujuan utama menciptakan
+                desain rumah yang menggabungkan estetika, fungsi, dan keberlanjutan. 
+                Pada awalnya, perusahaan ini beroperasi sebagai studio kecil yang melayani 
+                proyek lokal dengan fokus pada desain rumah minimalis. Proyek pertama mereka adalah 
+                sebuah rumah sederhana yang berhasil menarik perhatian berkat sentuhan modern dan efisiensi tata ruangnya.</p>
+        </div>
+    </section>
+
+    <div class="satu">
+        <p>Anda membutuhkan bantuan?</p>
+        <a href="https://wa.me/6289478398673" class="contact-btn">Hubungi Kami</a>
+    </div>
+
+    <div class="dua">
+        <div class="dua-main">
+            <div class="btn-main">
+                <img src="./IMG/logo1.0.png" alt="">
+                <p>Kami berkomitmen menciptakan hasil desain yang menarik dan inovatif</p>
+            </div>
+
+            <div class="btn-main">
+                <h3>Quick <span>Links</span></h3>
+                <a href="index.html" class="active">HOME</a>
+                <a href="blog.html">BLOG</a>
+                <a href="lokasi.html">LOKASI</a>
+                <a href="pesanan.html">PESANAN</a>
+            </div>
+
+            <div class="btn-main">
+                <h3>Follow <span>Us</span></h3>
+                <a href="">Instagram</a>
+                <a href="">Twitter</a>
+                <a href="">Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+
+</html>
